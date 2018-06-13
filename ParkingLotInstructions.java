@@ -45,6 +45,11 @@ public class ParkingLotInstructions{
                             break;
                         }
 
+                        case "exit" : {
+                            exitProcess = true;
+                            break;
+                        }
+
                         default : {
                             System.out.println("Unsupported instruction");
                         }
