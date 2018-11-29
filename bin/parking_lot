@@ -1,0 +1,20 @@
+# Add script to run program here.
+# Complete bin/setup so that after it is
+# run, bin/parking_lot can be used to launch
+# it.
+
+javac ParkingLotInstructions.java
+exit_code=$?
+
+if [ "$exit_code" -ne '0' ] ; then
+    echo "Program exited with exit code : $exit_code"
+    exit $exit_code 
+fi
+
+filename=$1 ; shift
+
+if [ -n "$filename" ] ; then
+    java ParkingLotInstructions ./functional_spec/fixtures/$filename
+else
+    java ParkingLotInstructions
+fi
